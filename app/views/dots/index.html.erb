@@ -1,0 +1,10 @@
+<h1>Dots#index</h1>
+<p>Find me in app/views/dots/index.html.erb</p>
+<% @dots.each do |dot| %>
+  <h1><%= dot.typename %></h1>
+  <p><%= dot.latitude %></p>
+  <p><%= dot.longtitude %></p>
+  <p><%= dot.degree %></p>
+  <p><%= dot.speed %></p>
+  <p><%= dot.time %></p>
+<% end %>
