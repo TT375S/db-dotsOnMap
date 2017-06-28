@@ -18,10 +18,10 @@ class DotsController < ApplicationController
 	hashed_json.each do |res|
 		dot = Dot.new
 		dot.typename = res["typename"]
-		dot.latitude = res["latitude"]
-		dot.longtitude = res["longtitude"]
-		dot.speed = res["speed"]
-		dot.degree = res["degree"]
+		dot.latitude = res["latitude"].to_f
+		dot.longtitude = res["longtitude"].to_f
+		dot.speed = res["speed"].to_f
+		dot.degree = res["degree"].to_f
 		dot.time = res["time"]
 		dot.save
 	end
