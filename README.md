@@ -15,4 +15,8 @@ http://(ドメイン名orIPアドレス):3000/dots/api/post/json
 として、POSTリクエストを送りbodyにはjsonを入れれば、データベースにデータが送れます。  
 自動でデータベースに追加されますが、このときデータが不足していると困る(パースしたJSONからデータ取り出す時に止まる？)ので、必ず上の検索APIが返してくるJSONと同じ形式のデータを送ってください。  
 
-
+## データベース
+カラム名と型は、idやtimestamp、createdatなど必須のものの他に  
+| latitude:float | longtitude:float | typename:string | degree:float | speed: float |  
+みたいな感じです  
+座標がfloatなのはRuby on Railsだとdoubleがどうも使えないらしく、SQLを直で書けば良いとかなんとか。面倒なので全部floatです。
